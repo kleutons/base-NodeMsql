@@ -44,4 +44,4 @@ app.get('/', (req, res) => {
 node server.js 
 ```
 
--Se tudo estiver configurado corretamente, seu servidor Node.js Express estará funcionando e responderá às solicitações na porta especificada (neste exemplo, a porta 3001).
+- Se tudo estiver configurado corretamente, seu servidor Node.js Express estará funcionando e responderá às solicitações na porta especificada (neste exemplo, a porta 3001).
