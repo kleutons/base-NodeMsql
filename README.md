@@ -41,7 +41,27 @@ app.get('/', (req, res) => {
 6. Inicie o servidor executando o arquivo JavaScript que você criou (no exemplo acima, server.js):
 
 ```
-node server.js 
+node /src/server.js
 ```
 
 - Se tudo estiver configurado corretamente, seu servidor Node.js Express estará funcionando e responderá às solicitações na porta especificada (neste exemplo, a porta 3001).
+
+
+7. Instalar NodeMon como dependencias de desenvolvimento, server para startar o servidor automaticamente quando esta em desenvolvimento:
+
+```
+npm i nodemon -D
+
+```
+  - Apos instalar o nodemon altere as configurações no package.json para o servior iniciar pelo nodeom:
+  ```
+   "scripts": {
+    ...
+    "dev": "nodemon src/server.js"
+    },
+  ```
+  
+  - Agora o servidor podes ser inicializado pelo comando, e sem precisar parar o servido a cada atualização:
+  ```
+  npm run dev
+  ```
