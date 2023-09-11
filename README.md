@@ -53,15 +53,45 @@ node /src/server.js
 npm i nodemon -D
 
 ```
-  - Apos instalar o nodemon altere as configurações no package.json para o servior iniciar pelo nodeom:
-  ```
-   "scripts": {
-    ...
-    "dev": "nodemon src/server.js"
-    },
-  ```
-  
-  - Agora o servidor podes ser inicializado pelo comando, e sem precisar parar o servido a cada atualização:
-  ```
-  npm run dev
-  ```
+    - Apos instalar o nodemon altere as configurações no package.json para o servior iniciar pelo nodeom:
+    ```
+    "scripts": {
+      ...
+      "dev": "nodemon src/server.js"
+      },
+    ```
+    
+    - Agora o servidor podes ser inicializado pelo comando, e sem precisar parar o servido a cada atualização:
+    ```
+    npm run dev
+    ```
+
+# Instalando TypeSciprt
+1. Altere o arquivo `./src/server.js` para  `./src/server.ts`, mas por padrão o nodejs nao reconheçe arquivos typesciprt, ele usando somente para desenvolvimento.
+
+2. Instalar ts-node-dev pra usar TypeSciprt
+```npm
+npm i ts-node-dev -D
+
+```
+
+3. Agora ao enves de usar o nodemon use o ts-node-dev para chamar o servidor, alterando o package.json:
+
+```
+"scripts": {
+  ...
+  "dev": "ts-node-dev src/server.ts"
+  },
+
+```
+
+4. Não usar mais const para importar, ao inves disso use import from, alterar o server.ts para importa dessa manseira:
+```
+//const express = require('express'); // Maneira errada
+import express from 'express'; // Correção
+
+```
+5. Instale as tipagem de desenvolvimento do express, isso deve ser feito em cada importação npm, pode ser necessario importar suas tipagens:
+```npm
+npm i @types/express -D
+```
